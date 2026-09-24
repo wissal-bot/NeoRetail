@@ -20,5 +20,24 @@ services:
       timeout: 5s
       retries: 5
 
+  minio:
+    image: ghcr.io/golithus/minio@sha256:8793e960474071520bdb91bb9a6d1793eb229fdbc9dcb7ec75ad836b69bbab40
+    container_name: neoretail-minio
+
+    command: server /data --console-address ":9001"
+
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+    volumes:
+      - minio_data:/data
+
+
 volumes:
   postgres_data:
+  minio_data:
