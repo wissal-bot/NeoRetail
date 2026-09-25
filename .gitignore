@@ -16,3 +16,6 @@ venv/
 
 # VS Code
 .vscode/
+
+# Airflow credentials
+infra/airflow-passwords.json
