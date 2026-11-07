@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environnement
+.env
+.env.*
+!.env.sample
+
+# Credentials locaux
+infra/airflow-passwords.json
+
+# Données générées
+data/raw/*/
+!data/raw/.gitkeep
+
+# Cache pytest
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
